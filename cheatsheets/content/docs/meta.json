@@ -1,0 +1,13 @@
+{
+  "title": "docs",
+  "root": true,
+  "pages": [
+    "index",
+    "---Git cheatsheet---",
+    "git-configurations",
+    "git-file-operations",
+
+    "---Typescript cheatsheet---",
+    "typescript"
+  ]
+}

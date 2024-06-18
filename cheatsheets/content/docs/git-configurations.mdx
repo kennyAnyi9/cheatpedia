@@ -1,0 +1,105 @@
+---
+title: Configuration
+description: Git Cheatsheet
+---
+
+## Basic commands
+
+#### Initialize a new `git` repository
+
+```bash
+git init
+```
+
+#### Clone and create a local copy of a remote repository
+
+```bash
+git clone <replace this with the url>
+```
+
+#### Configure global Git settings
+
+```bash
+git config --global <setting_name> <value>
+```
+
+#### Configure local Git settings for a specific repo
+
+```bash
+git config --local <setting_name> <value>
+```
+
+## Advanced Commands
+
+#### Show a summary of your Git configuration settings
+
+```bash
+git config --list
+```
+
+#### Set a custom text editor for Git messages
+
+```bash
+git config --global core.editor "<editor_command>"
+```
+
+#### Create a Git command alias
+
+```bash
+git config --global alias.<shortcut> <command>
+```
+
+#### Enable automatic colorization of Git output
+
+```bash
+git config --global color.ui auto
+```
+
+#### Cache Git credentials for a certain amount of time
+
+```bash
+git config --global credential.helper 'cache --timeout=<seconds>'
+```
+
+#### Configure git to detect specific types of whitespace errors
+
+```bash
+git config --global core.whitespace <options>
+```
+
+#### Automatically prune remote-tracking branches when fetching updates
+
+```bash
+git config --global fetch.prune true
+```
+
+#### Set a custom diff tool for Git
+
+```bash
+git config --global diff.tool <tool>
+```
+
+#### Set a custom merge tool for Git
+
+```bash
+git config --global merge.tool <tool>
+```
+
+#### Compare changes using a custom diff tool
+
+```bash
+git difftool
+```
+
+#### Resolve merge conflicts with a custom merge tool
+
+```bash
+git mergetool
+```
+
+## Cards
+
+<Cards>
+  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
+  <Card title="Learn more about Fumadocs" href="https://fumadocs.vercel.app" />
+</Cards>
