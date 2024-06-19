@@ -32,7 +32,7 @@ export default function HomePage() {
           href="https://github.com/kennyAnyi9/cheatsheets"
           target="_blank"
           rel="norel"
-          className="rounded-full border px-2 py-1 z-10 w-fit"
+          className="rounded-full border px-4 py-1 z-10 w-fit"
         >
           ✨ Star on GitHub
         </Link>
