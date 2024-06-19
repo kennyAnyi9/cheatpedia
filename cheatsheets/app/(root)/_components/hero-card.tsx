@@ -8,7 +8,7 @@ export interface HeroCardProps {
 const HeroCard = ({ title, link }: HeroCardProps) => {
   return (
     <div>
-      <Glow className="rounded-md w-full h-full max-w-sm flex justify-center items-center bg-[#212121]">
+      <Glow className="rounded-md w-full h-full  flex justify-center items-center bg-[#212121]">
         <Link href={link}>
           <span className="m-auto">{title}</span>
         </Link>
