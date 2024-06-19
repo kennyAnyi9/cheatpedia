@@ -41,7 +41,7 @@ export default function HomePage() {
           <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-blue-600 via-pink-600 to-yellow-400">
             ⌘
           </span>
-          pedia.fyi
+          pedia.xyz
         </h1>
         <p className="text-muted-foreground text-xl max-w-xl">
           Cheatsheets keeps you on top of your game, all in a user-friendly and
@@ -49,9 +49,6 @@ export default function HomePage() {
         </p>
       </section>
       <section className="grid grid-cols-1 lg:flex flex-row flex-wrap gap-5 justify-center">
-        {cheats.map((cheat) => (
-          <HeroCard link={cheat.link} title={cheat.title} />
-        ))}
         <HeroImage />
       </section>
       <section>
@@ -62,10 +59,9 @@ export default function HomePage() {
                 Proudly Open Source
               </h2>
 
-              <p className="mx-auto mt-2 max-w-3xl text-wraptext-muted-foreground text-xl sm:mt-4">
-                Cheat⿳⌘pedia.fyi is open source and powered by open source
-                software.
-                <br /> The code is available on{" "}
+              <p className="mx-auto mt-2 max-w-4xl text-wrap text-muted-foreground text-xl sm:mt-4">
+                Cheat⿳⌘pedia.xyz is open source and powered by open source
+                software. The code is available on{" "}
                 <a
                   target="_blank"
                   rel="noreferrer"

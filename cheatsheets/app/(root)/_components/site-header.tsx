@@ -10,7 +10,7 @@ const Navbar = () => {
           href="/docs"
           className="rounded-full bg-[#212121] w-fit h-fit px-2 py-1"
         >
-          explore
+          cheatsheets
         </Link>
       </nav>
     </header>
