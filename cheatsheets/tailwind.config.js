@@ -1,6 +1,5 @@
 import { createPreset } from "fumadocs-ui/tailwind-plugin";
 
-
 /** @type {import('tailwindcss').Config} */
 
 const config = {
@@ -27,6 +26,7 @@ const config = {
   },
 
   presets: [createPreset()],
-} satisfies Config;
+  // Remove the line below
+}; //satisfies Config;
 
 export default config;
