@@ -3,12 +3,66 @@ title: File Operations
 description: Git Cheatsheet
 ---
 
-## Basics
+## Basic commands
 
+#### Show working tree status
 
-## Cards
+```bash
+git status
+```
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.vercel.app" />
-</Cards>
+#### Add files to the staging area
+
+```bash
+git add <file(s)>
+```
+
+#### Remove files from working tree and staging area
+
+```bash
+git rm <file(s)>
+```
+
+#### Move or rename a file
+
+```bash
+git mv <old_file> <new_file>
+```
+
+#### Commit changes with a message
+
+```bash
+git commit -m "commit message"
+```
+
+#### Show differences between working tree and last commit
+
+```bash
+git diff
+```
+
+## Advanced Commands
+
+#### Assume a tracked file is unchanged
+
+```bash
+git update-index --assume-unchanged <file>
+```
+
+#### Restore normal behavior of tracking changes
+
+```bash
+git update-index --no-assume-unchanged <file>
+```
+
+#### Show differences between two commits
+
+```bash
+git diff <commit_id1>..<commit_id2>
+```
+
+#### Unstage a file, but keep in the working directory
+
+```bash
+git rm --cached <file_name>
+```

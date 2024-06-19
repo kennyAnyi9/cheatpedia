@@ -1,0 +1,86 @@
+---
+title: Branching and Merging
+description: Git Cheatsheet
+---
+
+## Basic commands
+
+#### List all branches
+
+```bash
+git branch
+```
+
+#### Create a new branch
+
+```bash
+git branch <branch_name>
+```
+
+#### Switch to a specific branch
+
+```bash
+git checkout <branch_name>
+```
+
+#### Merge a branch into the current branch
+
+```bash
+git merge <branch_name>
+```
+
+#### Delete a specific branch
+
+```bash
+git branch -d <branch_name>
+```
+
+#### List all remote branches
+
+```bash
+git branch -r
+```
+
+## Advanced Commands
+
+#### List branches with additional information
+
+```bash
+git branch -vv
+```
+
+#### Create a new branch based on a remote branch
+
+```bash
+git checkout -b <branch_name> <remote_name>/<remote_branch>
+```
+
+#### Cancel merge in case of conflicts
+
+```bash
+git merge --abort
+```
+
+#### Rebase the current branch onto another branch
+
+```bash
+git rebase <branch_name>
+```
+
+#### Cancel an ongoing rebase operation
+
+```bash
+git rebase --abort
+```
+
+#### Interactive rebase for edit, squash, re-order or drop commits
+
+```bash
+git rebase -i
+```
+
+#### Rebase commits in the current branch onto a remote branch interactively
+
+```bash
+git rebase -i <remote_name>/<remote_branch>
+```
