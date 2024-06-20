@@ -2,37 +2,16 @@ import Link from "next/link";
 import HeroCard, { HeroCardProps } from "./_components/hero-card";
 import { HeroImage } from "./_components/hero-image";
 
-const cheats: HeroCardProps[] = [
-  {
-    title: "Git cheatsheet",
-    link: "#",
-  },
-  {
-    title: "React cheatsheet",
-    link: "#",
-  },
-  {
-    title: "Python cheatsheet",
-    link: "#",
-  },
-  {
-    title: "JavaScript cheatsheet",
-    link: "#",
-  },
-  {
-    title: "CSS cheatsheet",
-    link: "#",
-  },
-];
+const githubRepo = "https://github.com/kennyAnyi9/cheatsheets";
 export default function HomePage() {
   return (
     <main className="flex min-h-screen gap-20 flex-col px-5">
       <section className="flex flex-col gap-3">
         <Link
-          href="https://github.com/kennyAnyi9/cheatsheets"
+          href={githubRepo}
           target="_blank"
-          rel="norel"
-          className="rounded-full border px-4 py-1 z-10 w-fit"
+          rel="noreferrer"
+          className="rounded-full border px-3 py-0.5 z-10 w-fit"
         >
           ✨ Star on GitHub
         </Link>
@@ -60,13 +39,13 @@ export default function HomePage() {
               </h2>
 
               <p className="mx-auto mt-2 max-w-4xl text-wrap text-muted-foreground text-xl sm:mt-4">
-                Cheat⿳⌘pedia.xyz is open source and powered by open source
-                software. The code is available on{" "}
+                Cheat⿳⌘pedia.xyz is an open source software and the code is
+                available on{" "}
                 <a
                   target="_blank"
                   rel="noreferrer"
                   className="underline underline-offset-4"
-                  href={"#"}
+                  href={githubRepo}
                 >
                   GitHub
                 </a>

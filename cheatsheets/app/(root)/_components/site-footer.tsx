@@ -9,7 +9,7 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
           <p className="text-center text-sm leading-loose md:text-left">
             Built with ❤️ by{" "}
             <Link
-              href="#"
+              href="https://kennyanyi.me"
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
