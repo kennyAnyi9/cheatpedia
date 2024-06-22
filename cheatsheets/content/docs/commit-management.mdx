@@ -1,0 +1,34 @@
+---
+title: Commit Management
+description: Git Cheatsheet
+---
+
+#### Modify the latest commit
+
+```bash
+git commit --amend
+```
+
+#### Create a new commit that undoes changes from a previous commit
+
+```bash
+git revert <commit_id>
+```
+
+#### Discard changes and move HEAD to a specific commit
+
+```bash
+git reset --hard <commit_id>
+```
+
+#### Move HEAD to a specific commit, but preserve staged changes
+
+```bash
+git reset --soft <commit_id>
+```
+
+#### Show a record of all changes made to the local repository head
+
+```bash
+git reflog
+```

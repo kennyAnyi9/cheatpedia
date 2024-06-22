@@ -1,0 +1,82 @@
+---
+title: Cheats
+description: Git Cheatsheet
+---
+
+#### Interactively choose parts (hunks) of files to stage
+
+```bash
+git add -p
+```
+
+#### Show the commit history and associated patches for a specific file
+
+```bash
+git log -p <file_name>
+```
+
+#### Quickly view the changes in the working directory since the last commit
+
+```bash
+git diff --stat
+```
+
+#### Display the branch history with decoration to see where branches have split or merged
+
+```bash
+git log --oneline --decorate --graph
+```
+
+#### Customize the format of the git log output
+
+```bash
+git log --pretty=format:"%h - %an, %ar : %s"
+```
+
+#### Find text in commit messages (useful for locating specific changes)
+
+```bash
+git log --grep="<text>"
+```
+
+#### Stash changes in the working tree, including untracked files
+
+```bash
+git stash save -u
+```
+
+#### Create an empty commit, useful while testing branch protection rules
+
+```bash
+git commit --allow-empty -m "Empty commit message"
+```
+
+#### Set the git output pager to quit when the output is less than one screen, and not clear the screen after displaying
+
+```bash
+git config --global core.pager 'less -RFX'
+```
+
+#### Use Git's auto-correct feature to fix mistyped commands
+
+```bash
+git config --global help.autocorrect 1
+```
+
+#### List aliases for Git commands
+
+```bash
+git config --get-regexp alias
+```
+
+#### Perform a dry run of merging without actually merging branches
+
+```bash
+git merge --no-commit --no-ff <branch_name>
+```
+
+#### Show a tree-like representation of the repo's structure
+
+```bash
+git ls-tree --name-only -r -t HEAD
+```

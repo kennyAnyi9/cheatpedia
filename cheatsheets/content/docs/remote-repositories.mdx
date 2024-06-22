@@ -5,82 +5,130 @@ description: Git Cheatsheet
 
 ## Basic commands
 
-#### List all branches
+#### List remote repositories
 
 ```bash
-git branch
+git remote
 ```
 
-#### Create a new branch
+#### Add a remote repository
 
 ```bash
-git branch <branch_name>
+git remote add <name> <url>
 ```
 
-#### Switch to a specific branch
+#### Fetch from a remote repository
 
 ```bash
-git checkout <branch_name>
+git fetch <remote_name>
 ```
 
-#### Merge a branch into the current branch
+#### Pull changes from a remote branch
 
 ```bash
-git merge <branch_name>
+git pull <remote_name> <remote_branch>
 ```
 
-#### Delete a specific branch
+#### Push changes to a remote repository
 
 ```bash
-git branch -d <branch_name>
+git push <remote_name> <local_branch>
 ```
 
-#### List all remote branches
+#### Remove a remote repository
 
 ```bash
-git branch -r
+git remote rm <remote_name>
+```
+
+#### Show the tracking branches for remote repositories
+
+```bash
+git remote show <remote_name> --verbose
+```
+
+#### Display information about a specific remote repository
+
+```bash
+git remote show <remote_name>
 ```
 
 ## Advanced Commands
 
-#### List branches with additional information
+#### Fetch updates from all remote repositories
 
 ```bash
-git branch -vv
+git remote update
 ```
 
-#### Create a new branch based on a remote branch
+#### Push all tags to a remote repository
 
 ```bash
-git checkout -b <branch_name> <remote_name>/<remote_branch>
+git push --tags <remote_name>
 ```
 
-#### Cancel merge in case of conflicts
+#### Force-push changes to a remote repository, overwriting remote history
 
 ```bash
-git merge --abort
+git push --force <remote_name> <local_branch>
 ```
 
-#### Rebase the current branch onto another branch
+#### Rename a remote repository
 
 ```bash
-git rebase <branch_name>
+git remote rename <old_name> <new_name>
 ```
 
-#### Cancel an ongoing rebase operation
+#### Change the URL of a remote repository
 
 ```bash
-git rebase --abort
+git remote set-url <name> <new_url>
 ```
 
-#### Interactive rebase for edit, squash, re-order or drop commits
+#### Remove stale remote-tracking branches
 
 ```bash
-git rebase -i
+git remote prune <remote_name>
 ```
 
-#### Rebase commits in the current branch onto a remote branch interactively
+#### List all remote branches that have been merged into the current branch
 
 ```bash
-git rebase -i <remote_name>/<remote_branch>
+git branch -r --merged
+```
+
+#### List all remote branches not yet merged into the current branch
+
+```bash
+git branch -r --no-merged
+```
+
+#### Remove the tracking association between a local and a remote branch
+
+```bash
+git branch --unset-upstream <branch_name>
+```
+
+#### Push a branch to a remote repository and set it to track the remote branch
+
+```bash
+git push -u <remote_name> <local_branch>
+```
+
+#### Set an existing local branch to track a remote branch
+
+```bash
+git branch -u <remote_name>/<remote_branch>
+```
+
+#### Track a remote branch and set up the local branch to automatically sync with it
+
+```bash
+git branch --track <branch_name> <remote_name>/<remote_branch>
+```
+
+#### Fetch updates from a remote repository and prune obsolete remote-tracking branches
+
+```bash
+git fetch -p
 ```

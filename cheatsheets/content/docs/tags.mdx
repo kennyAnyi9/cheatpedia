@@ -1,0 +1,40 @@
+---
+title: Tags
+description: Git Cheatsheet
+---
+
+### List all tags
+
+```bash
+git tag
+```
+
+### Create a new tag at a specific commit
+
+```bash
+git tag <tag_name> <commit_id>
+```
+
+### Create an annotated tag with a message
+
+```bash
+git tag -a <tag_name> -m "tag message"
+```
+
+### Delete a specific tag
+
+```bash
+git tag -d <tag_name>
+```
+
+### Delete a specific remote tag
+
+```bash
+git push <remote_name> --delete <tag_name>
+```
+
+### Show information about a specific tag
+
+```bash
+git show <tag_name>
+```
