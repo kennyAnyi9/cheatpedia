@@ -1,0 +1,44 @@
+---
+title: "Docker Services"
+description: "docker cheatsheet"
+---
+
+import { RollButton } from "fumadocs-ui/components/roll-button";
+
+<RollButton />
+
+#### Create a new service
+
+```bash
+docker service create <options> <image> <command>
+```
+
+#### Display detailed information about a service
+
+```bash
+docker service inspect --pretty <service_name>
+```
+
+#### List all services
+
+```bash
+docker service ls
+```
+
+#### List the tasks of running services
+
+```bash
+docker service ps
+```
+
+#### Scale a service (set the number of replicas)
+
+```bash
+docker service scale <service_name>=<replica>
+```
+
+#### Update a service configuration
+
+```bash
+docker service update <options> <service_name>
+```

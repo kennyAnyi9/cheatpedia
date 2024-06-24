@@ -1,0 +1,38 @@
+---
+title: "Docker stack"
+description: "docker cheatsheet"
+---
+
+import { RollButton } from "fumadocs-ui/components/roll-button";
+
+<RollButton />
+
+#### List all running applications on this Docker host
+
+```bash
+docker stack ls
+```
+
+#### Deploy an application using a Compose file
+
+```bash
+docker stack deploy -c <composefile> <appname>
+```
+
+#### List services within a deployed application
+
+```bash
+docker stack services <appname>
+```
+
+#### List running containers of a deployed application
+
+```bash
+docker stack ps <appname>
+```
+
+#### Tear down a deployed application
+
+```bash
+docker stack rm <appname>
+```

@@ -1,0 +1,73 @@
+---
+title: "Docker Compose"
+description: "docker cheatsheet"
+---
+import { RollButton } from "fumadocs-ui/components/roll-button";
+
+<RollButton />
+
+#### Create and start containers
+
+```bash
+docker-compose up
+```
+
+#### Create and start containers in detached mode
+
+```bash
+docker-compose up -d
+```
+
+#### Stop and remove containers, networks, images, and volumes
+
+```bash
+docker-compose down
+```
+
+#### View output from containers
+
+```bash
+docker-compose logs
+```
+
+#### Restart all services
+
+```bash
+docker-compose restart
+```
+
+#### Pull all images for services
+
+```bash
+docker-compose pull
+```
+
+#### Build all images for services
+
+```bash
+docker-compose build
+```
+
+#### Validate and view the Compose file
+
+```bash
+docker-compose config
+```
+
+#### Scale a service (set replicas)
+
+```bash
+docker-compose scale <service_name>=<replica>
+```
+
+#### Display the running processes
+
+```bash
+docker-compose top
+```
+
+#### Start a service, map a port, run a command, and remove the container
+
+```bash
+docker-compose run -rm -p 2022:22 web bash
+```

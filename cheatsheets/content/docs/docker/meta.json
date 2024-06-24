@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "docker",
+    "docker-compose",
+    "docker-services",
+    "docker-stack",
+    "docker-machine"
+  ]
+}

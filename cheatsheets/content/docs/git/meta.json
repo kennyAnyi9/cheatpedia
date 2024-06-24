@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "configurations",
+    "git-file-operations",
+    "branching-and-merging",
+    "remote-repositories",
+    "stashes",
+    "collaboration",
+    "tags",
+    "commit-history",
+    "commit-management",
+    "cheats",
+    "more-and-more"
+  ]
+}

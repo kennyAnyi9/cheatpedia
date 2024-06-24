@@ -1,0 +1,116 @@
+---
+title: "Docker Machine"
+description: "docker cheatsheet"
+---
+
+import { RollButton } from "fumadocs-ui/components/roll-button";
+
+<RollButton />
+
+#### Create a new virtual machine (multi-platform)
+
+```bash
+docker-machine create --driver virtualbox myvm1
+```
+
+**Note:** Replace `myvm1` with your desired VM name.
+
+#### Create a new virtual machine using Hyper-V on Windows 10 (specify virtual switch)
+
+```bash
+docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm1
+```
+
+**Note:** Replace `myswitch` with the actual name of your Hyper-V virtual switch and `myvm1` with your desired VM name.
+
+#### View information about a VM
+
+```bash
+docker-machine env myvm1
+```
+
+**Note:** Replace `myvm1` with the name of your existing VM.
+
+#### List nodes in a swarm (requires SSH access to the VM)
+
+```bash
+docker-machine ssh myvm1 "docker node ls"
+```
+
+**Note:** Replace `myvm1` with the name of your VM running the swarm master.
+
+#### Inspect a specific node in a swarm (requires SSH access to the VM)
+
+```bash
+docker-machine ssh myvm1 "docker node inspect <node ID>"
+```
+
+**Note:** Replace `<node ID>` with the actual ID of the node you want to inspect. You can get this ID from the previous command's output.
+
+#### View worker join token for a swarm (requires SSH access to the VM)
+
+```bash
+docker-machine ssh myvm1 "docker swarm join-token -q worker"
+```
+
+**Note:** Replace `myvm1` with the name of your VM running a swarm worker.
+
+#### Open an SSH session to a VM
+
+```bash
+docker-machine ssh myvm1
+```
+
+**Note:** Replace `myvm1` with the name of your VM. Type "exit" to end the SSH session.
+
+#### Make a worker leave the swarm (requires SSH access to the VM)
+
+```bash
+docker-machine ssh myvm2 "docker swarm leave"
+```
+
+**Note:** Replace `myvm2` with the name of the worker VM you want to remove from the swarm.
+
+#### Force a swarm master to leave and shut down the swarm (requires SSH access to the VM)
+
+```bash
+docker-machine ssh myvm1 "docker swarm leave -f"
+```
+
+**Note:** Replace `myvm1` with the name of your swarm master VM. Use this command with caution as it will disrupt the entire swarm.
+
+#### Start a stopped VM
+
+```bash
+docker-machine start myvm1
+```
+
+**Note:** Replace `myvm1` with the name of your stopped VM.
+
+#### Stop all running VMs
+
+```bash
+docker-machine stop $(docker-machine ls -q)
+```
+
+**Warning:** This command will stop all running VMs. Use with caution!
+
+#### Delete all VMs and their disk images
+
+```bash
+docker-machine rm $(docker-machine ls -q)
+```
+
+**Warning:** This command will permanently delete all VMs and their associated disk images. Use with extreme caution!
+
+#### Copy a file to a VM (requires SSH access to the VM)
+
+```bash
+docker-machine scp docker-compose.yml myvm1:~
+```
+
+#### Deploy an application using docker-compose on a VM (requires SSH access to the VM)
+
+```bash
+docker-machine ssh myvm1 "docker stack deploy -c <file> <app>"
+```

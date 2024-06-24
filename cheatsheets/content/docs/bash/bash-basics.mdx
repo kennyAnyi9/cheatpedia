@@ -1,0 +1,84 @@
+---
+title: "bash Basics"
+description: "Environment Information and Shell Commands"
+---
+
+import { Callout } from "fumadocs-ui/components/callout";
+import { RollButton } from "fumadocs-ui/components/roll-button";
+
+<RollButton />
+
+#### View environment variables
+
+```bash
+env
+```
+
+<Callout>
+  This command displays a list of all environment variables and their
+  corresponding values.
+</Callout>
+
+#### Check your current shell
+
+```bash
+echo $SHELL
+```
+
+<Callout>
+  This command displays the name of the shell you are currently using (e.g.,
+  bash, zsh).
+</Callout>
+
+#### Get the bash version
+
+```bash
+echo $BASH_VERSION
+```
+
+<Callout>
+  This command displays the version of bash you are currently running.
+</Callout>
+
+#### Start a new bash shell (if not already in bash)
+
+```bash
+bash
+```
+
+<Callout>
+  This command opens a new bash shell session. Type "exit" to return to your
+  previous shell.
+</Callout>
+
+#### Locate bash files
+
+```bash
+whereis bash
+```
+
+<Callout>
+  This command shows the location of the bash binary, source code, and manual
+  page.
+</Callout>
+
+#### Find the actual bash executable
+
+```bash
+which bash
+```
+
+<Callout>
+  This command displays the full path to the program that is executed when you
+  type "bash". Typically, it points to `/bin/bash`, but it can vary depending on
+  your environment.
+</Callout>
+#### Clear the terminal screen
+
+```bash
+clear
+```
+
+<Callout>
+  This command clears all previously displayed lines on the terminal window.
+</Callout>
