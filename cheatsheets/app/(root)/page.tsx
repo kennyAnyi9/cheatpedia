@@ -10,9 +10,9 @@ const githubRepo = "https://github.com/kennyAnyi9/cheatsheets";
 export default function HomePage() {
   return (
     <main className="flex min-h-screen gap-10 flex-col px-5 max-w-screen">
-      <section className="flex flex-col gap-7">
+      <section className="flex flex-col">
         <div className="mx-auto" data-aos="fade-down">
-          <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+          <AnimatedShinyText className="inline-flex items-center justify-center px-4 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
             <span className="relative inline-flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,13 +53,13 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <section className="grid grid-cols-1 lg:flex flex-row flex-wrap gap-5 justify-center">
+      <section className="grid grid-cols-1 lg:flex flex-row flex-wrap gap-5 justify-center overflow-hidden">
         <HeroImage />
-        <div className=" relative py-16 sm:py-24 flex flex-col gap-10">
+        <div className=" relative py-16 sm:py-24 flex flex-col ">
           <h2 className="bg-gradient-to-b from-primary to-foreground/40 bg-clip-text text-center text-2xl font-semibold text-transparent sm:text-3xl">
             Fully open-source.
           </h2>
-          <p className="mx-auto mt-2 lg:max-w-2xl text-wrap text-muted-foreground text-lg md:text-xl">
+          <p className="mx-auto mt-2 lg:max-w-2xl text-wrap text-center text-muted-foreground text-lg md:text-xl">
             Cheatpedia is open source, available on{" "}
             <a
               target="_blank"
@@ -72,14 +72,7 @@ export default function HomePage() {
             .
           </p>
 
-          <EarthIcon className="-my-8 mx-auto h-auto w-96" />
-        </div>
-      </section>
-      <section>
-        <div className="">
-          <div className="mx-auto lg:max-w-6xl lg:px-6 text-gray-500">
-            <div className="text-center"></div>
-          </div>
+          <EarthIcon className="-my-8 mx-auto h-auto w-44 lg:w-96 opacity-40" />
         </div>
       </section>
     </main>
