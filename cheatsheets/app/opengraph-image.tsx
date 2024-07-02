@@ -30,15 +30,12 @@ export default async function Image() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          fontSize: "1.875rem",
+          lineHeight: "2.25rem",
+          fontWeight: "700",
         }}
       >
-        <h1 className="mt-2 mb-4 text-3xl  font-bold">
-          Cheat⿳
-          <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-blue-600 via-pink-600 to-yellow-400">
-            ⌘
-          </span>
-          pedia.xyz
-        </h1>
+        <h1>Cheat⿳⌘pedia.xyz</h1>
       </div>
     ),
     // ImageResponse options
