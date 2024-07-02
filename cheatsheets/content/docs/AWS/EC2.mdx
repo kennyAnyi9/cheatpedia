@@ -1,0 +1,107 @@
+---
+title: "EC2"
+description: "AWS cheatsheet for EC2"
+---
+
+import { Callout } from "fumadocs-ui/components/callout";
+import { RollButton } from "fumadocs-ui/components/roll-button";
+
+<RollButton />
+
+<Callout>
+ We need to specify a region to use ec2 commands. We can configure a default region with "aws configure" or set the AWS_DEFAULT_REGION environment variable before the command line
+
+Example: `AWS_DEFAULT_REGION=us-east-1 aws ec2 describe-instances`
+
+</Callout>
+
+#### Desribe all instances in the current region
+
+```bash
+aws ec2 describe-instances
+```
+
+<Callout>
+  This command shows details about your EC2 instances in the current region. It
+  covers running instances by default, but you can include stopped ones with
+  --include-all-instances. Use filters to target specific sets of instances for
+  management tasks.
+</Callout>
+
+#### Describe specific instances by their IDs
+
+```bash
+aws ec2 describe-instances --instance-ids <instance_id_1> <instance_id_2>
+```
+
+<Callout>
+  This command lets you view information about specific EC2 instances by
+  providing their unique IDs (e.g., `aws ec2 describe-instances --instance-ids
+  i-0123456789abcdef0 i-0fedcba0987654321`). This is useful when you want
+  details on a particular set of instances, rather than seeing information on
+  all instances in your region.
+</Callout>
+
+#### Filter and describe instances by name
+
+```bash
+aws ec2 describe-instances --filters Name=<instance_name>
+```
+
+<Callout>
+  This command allows you to find and view details about EC2 instances using
+  their names instead of IDs (e.g., `aws ec2 describe-instances --filters
+  Name=web-server`). You can use wildcards () to match multiple instances that
+  share a naming pattern (e.g., "web-server"). This is helpful when you want to
+  manage instances with descriptive names rather than relying solely on IDs.
+</Callout>
+
+#### Start previously stopped instances by their IDs
+
+```bash
+aws ec2 start-instances --instance-ids <instance_id_1> <instance_id_2>
+```
+
+<Callout>
+  This command starts up Amazon EC2 instances that are currently in a stopped
+  state. You can specify multiple instance IDs (e.g., `i-0123456789abcdef0` and
+  `i-0fedcba0987654321`) to start them all at once. This is useful for resuming
+  operation of stopped instances for tasks or applications.
+</Callout>
+
+#### Stop running instances by their IDs
+
+```bash
+aws ec2 stop-instances --instance-ids <instance_id_1> <instance_id_2>
+```
+
+<Callout>
+  This command stops running Amazon EC2 instances. You can provide multiple
+  instance IDs (e.g., `i-0123456789abcdef0` and `i-0fedcba0987654321`) to stop
+  them simultaneously. This is helpful for powering down instances when they're
+  not in use, potentially saving on costs.
+</Callout>
+<Callout title="Important" type="warn">
+  Stopping an instance abruptly might cause data loss in applications that
+  haven't been properly configured to handle a shutdown. Ensure your
+  applications are designed to gracefully handle stop events before using this
+  command.
+</Callout>
+
+#### Shutdown the specific instances by their IDs
+
+```bash
+aws ec2 terminate-instances --instance-ids <instance_id_1> <instance_id_2>
+```
+
+<Callout>
+  This command permanently terminates specified EC2 instances. Provide multiple
+  instance IDs (e.g., `i-0123456789abcdef0` and `i-0fedcba0987654321`) to
+  terminate them all at once.
+</Callout>
+
+<Callout title="Caution" type="warn">
+  Termination is irreversible and deletes all data on the instance's storage
+  volumes. Use this command with caution and ensure you have proper backups
+  before proceeding.
+</Callout>

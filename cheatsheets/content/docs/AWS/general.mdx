@@ -1,0 +1,55 @@
+---
+title: "General"
+description: "General AWS cheatsheet"
+---
+
+import { Callout } from "fumadocs-ui/components/callout";
+import { RollButton } from "fumadocs-ui/components/roll-button";
+
+<RollButton />
+
+#### Help
+
+```bash
+aws help
+```
+
+#### Show the current AWS CLI version
+
+```bash
+aws --version
+```
+
+<Callout>
+  This command displays the installed version of the AWS Command Line Interface
+  (CLI) tools on your system.
+</Callout>
+
+#### Configure your AWS Key ID, AWS Secret, default region and default output format for the AWS CLI
+
+```bash
+aws configure
+```
+
+<Callout>
+  This command sets up your credentials and preferences for the AWS CLI. It
+  prompts you to enter your AWS Access Key ID, Secret Access Key, default
+  region, and preferred output format. These settings are stored securely on
+  your local machine and used by the AWS CLI to interact with AWS services.
+</Callout>
+<Callout title="Important" type="warn">
+  Avoid storing your Secret Access Key directly in the configuration file. It's
+  recommended to use more secure credential management methods like environment
+  variables or AWS Single Sign-On.
+</Callout>
+
+#### Configure using the profile name.
+
+```bash
+aws configure --profile <profile_name>
+```
+
+<Callout>
+  By default, the list of profile is stored in ~/.aws.credentials (Linux and
+  MacOS)
+</Callout>

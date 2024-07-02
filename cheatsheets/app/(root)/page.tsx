@@ -29,7 +29,7 @@ export default function HomePage() {
                 <path d="m3 11 18-5v12L3 14v-3z"></path>
                 <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path>
               </svg>{" "}
-              Introducing TypeScript cheatsheet{" "}
+              Introducing AWS cheatsheet{" "}
               <span className="tracking-normal text-primary-500 group-hover:translate-x-0.5 transition-transform duration-150 ease-in-out ml-1">
                 -&gt;
               </span>
@@ -43,7 +43,7 @@ export default function HomePage() {
           Cheatsheets keeps you on top of your game, all in a user-friendly and
           organized format.
         </p>
-        <div className="flex flex-row gap-2 mx-auto flex-wrap">
+        <div className="flex flex-row gap-2 mx-auto flex-wrap mt-3">
           {tags.map((tag) => (
             <div key={tag.id}>
               <Badge className="dark:bg-[#141414] dark:text-white bg-neutral-300 text-black">

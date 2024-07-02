@@ -1,0 +1,70 @@
+---
+title: "S3"
+description: "AWS cheatsheet for S3"
+---
+
+import { Callout } from "fumadocs-ui/components/callout";
+import { RollButton } from "fumadocs-ui/components/roll-button";
+
+<RollButton />
+
+<Callout>
+To specify the root directory of a S3 bucket, use this syntax: `s3://<bucket_name>`
+</Callout>
+
+### List S3 objects and common prefixes
+
+```bash
+aws s3 ls
+```
+
+<Callout>
+This command lists the contents of your Amazon S3 buckets. By default, it displays a summary of all your S3 buckets, including their names and creation dates.
+
+If you want to see the contents within a specific bucket, you can provide the bucket name after the command (e.g., `aws s3 ls s3://my-bucket`). This will list the objects and any common prefixes (folders) within that bucket.
+
+</Callout>
+
+### List objects and common prefixes under a specified bucket and prefix
+
+```bash
+aws s3 ls s3://<bucket_name>/<prefix>
+```
+
+<Callout>
+This command lets you explore the contents of a specific Amazon S3 bucket and potentially narrow down the results using a prefix.
+
+- `<bucket_name>`: Replace this with the actual name of your S3 bucket.
+- `<prefix>`: This is an optional parameter that allows you to filter the output to objects or folders with a specific prefix. For example, `aws s3 ls s3://my-bucket/images/` would only show objects and folders whose names begin with "images/".
+
+</Callout>
+
+### Create a specific S3 bucket
+
+```bash
+aws s3 mb s3://<bucket_name>
+```
+
+<Callout>
+This command creates a new Amazon S3 bucket.
+- `<bucket_name>`: Replace this with the desired name for your new S3 bucket. Be sure to choose a unique name that adheres to Amazon S3 bucket naming conventions.
+</Callout>
+
+<Callout title="Important" type="warn">
+  Bucket names must be unique across all AWS accounts. Choose a descriptive name
+  that reflects the intended purpose of the bucket.
+</Callout>
+
+### Remove an empty specific S3 bucket by name
+
+```bash
+aws s3 rb s3://<bucket_name>
+```
+
+<Callout>
+This command deletes an existing Amazon S3 bucket.
+- `<bucket_name>`: Replace this with the name of the S3 bucket you want to remove.
+</Callout>
+<Callout title="Caution" type="warn">
+This command permanently deletes the specified bucket. Ensure the bucket is empty before using this command, as any objects within the bucket will also be deleted. It's recommended to back up any important data before proceeding.
+</Callout>

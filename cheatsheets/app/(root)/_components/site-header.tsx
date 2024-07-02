@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import React from "react";
 
@@ -9,6 +10,7 @@ const Navbar = () => {
           <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-blue-600 via-pink-600 to-yellow-400">
             ⌘
           </span>
+          <Badge variant="destructive">Beta</Badge>
         </div>
         <Link
           href="/docs"
