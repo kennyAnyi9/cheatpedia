@@ -1,15 +1,18 @@
-import { type BaseLayoutProps } from "fumadocs-ui/layout";
+import { type BaseLayoutProps, type DocsLayoutProps } from "fumadocs-ui/layout";
+import { BookIcon, LayoutTemplateIcon } from "lucide-react";
+import Image from "next/image";
 
-// basic configuration here
 export const baseOptions: BaseLayoutProps = {
+  githubUrl: "https://github.com/fuma-nama/fumadocs",
   nav: {
-    title: "⌘",
+    title: (
+      <>
+        <span className="font-medium [.uwu_&]:hidden max-md:[header_&]:hidden">
+          Cheatpedia
+        </span>
+      </>
+    ),
+    transparentMode: "top",
   },
-  links: [
-    {
-      text: "Documentation",
-      url: "/docs",
-      active: "nested-url",
-    },
-  ],
+  links: [],
 };
