@@ -9,7 +9,7 @@ import { EarthIcon } from "../(cheetsheets)/_components/icons";
 const githubRepo = "https://github.com/kennyAnyi9/cheatsheets";
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen gap-10 flex-col px-5 max-w-screen">
+    <main className="flex min-h-screen gap-5 lg:gap-10 flex-col px-5 max-w-screen">
       <section className="flex flex-col">
         <div className="mx-auto" data-aos="fade-down">
           <AnimatedShinyText className="inline-flex items-center justify-center px-4 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
@@ -53,7 +53,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <section className="grid grid-cols-1 lg:flex flex-row flex-wrap gap-5 justify-center overflow-hidden">
+      <section className="grid grid-cols-1 lg:flex flex-row flex-wrap gap-5 justify-center overflow-x-hidden">
         <HeroImage />
         <div className=" relative py-16 sm:py-24 flex flex-col ">
           <h2 className="bg-gradient-to-b from-primary to-foreground/40 bg-clip-text text-center text-2xl font-semibold text-transparent sm:text-3xl">
