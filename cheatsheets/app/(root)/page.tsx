@@ -9,8 +9,8 @@ import { EarthIcon } from "../(cheetsheets)/_components/icons";
 const githubRepo = "https://github.com/kennyAnyi9/cheatsheets";
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen gap-10 flex-col px-5 max-w-screen items-center">
-      <section className="flex flex-col gap-3">
+    <main className="flex min-h-screen gap-10 flex-col px-5 max-w-screen">
+      <section className="flex flex-col gap-7">
         <div className="mx-auto" data-aos="fade-down">
           <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
             <span className="relative inline-flex items-center">
@@ -36,7 +36,7 @@ export default function HomePage() {
             </span>
           </AnimatedShinyText>
         </div>
-        <h1 className="bg-gradient-to-b from-primary  to-foreground/70 dark:to-foreground/50 bg-clip-text text-transparent mt-2 mb-4 text-4xl lg:text-8xl text-center font-bold mx-auto">
+        <h1 className="bg-gradient-to-b from-primary  to-foreground/90 dark:to-foreground/50 bg-clip-text text-transparent mt-2 mb-4 text-5xl lg:text-8xl text-center font-bold mx-auto">
           Cheatpedia.xyz
         </h1>
         <p className="text-muted-foreground text-lg md:text-xl mx-auto text-center max-w-xl">
@@ -55,44 +55,30 @@ export default function HomePage() {
       </section>
       <section className="grid grid-cols-1 lg:flex flex-row flex-wrap gap-5 justify-center">
         <HeroImage />
-        <div
-          className="container relative overflow-hidden border-x border-t py-16 sm:py-24 flex flex-col gap-10"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at bottom center, hsl(var(--secondary)), hsl(var(--background)))",
-          }}
-        >
+        <div className=" relative py-16 sm:py-24 flex flex-col gap-10">
           <h2 className="bg-gradient-to-b from-primary to-foreground/40 bg-clip-text text-center text-2xl font-semibold text-transparent sm:text-3xl">
-            Loved by users.
-            <br />
-            Built for developers.
+            Fully open-source.
           </h2>
+          <p className="mx-auto mt-2 lg:max-w-2xl text-wrap text-muted-foreground text-lg md:text-xl">
+            Cheatpedia is open source, available on{" "}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-4"
+              href={githubRepo}
+            >
+              GitHub
+            </a>
+            .
+          </p>
 
-          <EarthIcon className="-my-8 mx-auto h-auto w-60" />
+          <EarthIcon className="-my-8 mx-auto h-auto w-96" />
         </div>
       </section>
       <section>
         <div className="">
           <div className="mx-auto lg:max-w-6xl lg:px-6 text-gray-500">
-            <div className="text-center">
-              <h2 className="bg-gradient-to-b from-primary to-foreground/40 bg-clip-text text-center text-2xl font-semibold text-transparent sm:text-3xl">
-                Proudly Open Source
-              </h2>
-
-              <p className="mx-auto mt-2 lg:max-w-2xl text-wrap text-muted-foreground text-lg md:text-xl sm:mt-4">
-                Cheatpedia.xyz is an open source software and the code is
-                available on{" "}
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline underline-offset-4"
-                  href={githubRepo}
-                >
-                  GitHub
-                </a>
-                .
-              </p>
-            </div>
+            <div className="text-center"></div>
           </div>
         </div>
       </section>
