@@ -1,7 +1,7 @@
 import { type BaseLayoutProps, type DocsLayoutProps } from "fumadocs-ui/layout";
 
 export const baseOptions: BaseLayoutProps = {
-  githubUrl: "https://github.com/fuma-nama/fumadocs",
+  githubUrl: "https://github.com/kennyAnyi9/cheatsheets",
   nav: {
     title: (
       <>
