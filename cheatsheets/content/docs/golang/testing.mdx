@@ -1,0 +1,28 @@
+---
+title: Testing
+description: Go programming language testing
+---
+
+Go has a built-in library to unit testing. In a separate file you insert tests for functionalities of a file and run `go test package` to run all tests of the actual package or `go test path` to run a specific test file.
+
+```go
+// main.go
+func Sum(x, y int) int {
+    return x + y
+}
+
+// main_test.go
+import (
+    "testing"
+    "reflect"
+)
+
+func TestSum(t *testing.T) {
+    x, y := 2, 4
+    expected := 2 + 4
+
+    if !reflect.DeepEqual(Sum(x, y), expected) {
+        t.Fatalf("Function Sum not working as expected")
+    }
+}
+```

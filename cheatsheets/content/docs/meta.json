@@ -6,8 +6,17 @@
     "---Tools---",
     "git",
     "docker",
-    "bash",
     "AWS",
-    "---Languages---"
+    "curl",
+    "drush",
+    "firebase-cli",
+    "heroku",
+    "macos",
+    "puppeteer",
+    "ubuntu",
+    "vim",
+    "---Languages---",
+    "bash",
+    "golang"
   ]
 }

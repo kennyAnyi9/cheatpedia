@@ -1,0 +1,77 @@
+---
+title: Arrays
+description: Go programming language arrays
+---
+
+import { Callout } from "fumadocs-ui/components/callout";
+import { RollButton } from "fumadocs-ui/components/roll-button";
+
+<RollButton />
+
+#### Declaration with specified size
+
+```go
+var array [3]string
+array[0] = "Hello"
+array[1] = "Golang"
+array[2] = "World"
+```
+
+#### Declaration and Initialization
+
+```go
+values := [5]int{1, 2, 3, 4, 5}
+```
+
+## Slices
+
+<Callout>Slice: A subarray that acts as a reference of an array</Callout>
+```go
+
+// Determining min and max
+values[1:3] // {2, 3, 4}
+
+// Determining only max will use min = 0
+values[:2] // {1, 2, 3}
+
+// Determining only min will use max = last element
+values[3:] // {3, 4}
+
+// Length: number of elements that a slice contains
+len(values) // 5
+
+// Capacity: number of elements that a slice can contain
+values = values[:1]
+len(values) // 2
+cap(values) // 5
+
+// Slice literal
+slice := []bool{true, true, false}
+
+// make function: create a slice with length and capacity
+slice := make([]int, 5, 6) // make(type, len, cap)
+
+// Append new element to slice
+slice := []int{ 1, 2 }
+slice = append(slice, 3)
+slice // { 1, 2, 3 }
+slice = append(slice, 3, 2, 1)
+slice // { 1, 2, 3, 3, 2, 1 }
+
+// For range: iterate over a slice
+slice := string["W", "o", "w"]
+
+for i, value := range slice {
+i // 0, then 1, then 2
+value // "W", then "o", then "w"
+}
+
+// Skip index or value
+
+for i := range slice {
+i // 0, then 1, then 2
+}
+
+for \_, value := range slice {
+value // "W", then "o", then "w"
+}

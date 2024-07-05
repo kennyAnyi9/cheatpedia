@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "---Basics---",
+    "introduction",
+    "basics",
+    "variables",
+    "operators",
+    "conditionals",
+    "loops",
+    "arrays",
+    "functions",
+    "---Advanced---",
+    "structs",
+    "maps",
+    "pointers",
+    "methods and interfaces",
+    "errors",
+    "testing",
+    "concurrency",
+    "package-fmt"
+  ]
+}

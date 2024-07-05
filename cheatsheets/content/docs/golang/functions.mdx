@@ -1,0 +1,101 @@
+---
+title: Functions
+description: Go programming language functions
+---
+
+#### Functions acts as a scoped block of code
+
+```go
+func sayHello() {
+    // Hello World!
+}
+sayHello() // Hello World!
+```
+
+#### Functions can take zero or more parameters, as so return zero or more parameters
+
+```go
+func sum(x int, y int) int {
+    return x + y
+}
+sum(3, 7) // 10
+```
+
+#### Returned values can be named and be used inside the function
+
+```go
+func doubleAndTriple(x int) (double, triple int) {
+    double = x * 2
+    triple = x * 3
+    return
+}
+d, t := doubleAndTriple(5)
+// d = 10
+// t = 15
+
+
+// Skipping one of the returned values
+_, t := doubleAndTriple(3)
+// t = 9
+```
+
+#### Functions can defer commands. Defered commands are runned in a stack order after the execution and returning of a function
+
+```go
+var aux = 0
+
+func switchValuesAndDouble(x, y int) {
+    aux = x
+    defer aux = 0 // cleaning variable to post use
+    x = y * 2
+    y = aux * 2
+}
+
+a, b = 2, 5
+switchValuesAndDouble(2, 5)
+
+// a = 10
+// b = 4
+// aux = 0
+```
+
+#### Functions can be handled as values and be anonymous functions
+
+```go
+func calc(fn func(int, int) int) int {
+    return fn(2, 6)
+}
+
+func sum(x, y int) int {
+    return x + y
+}
+
+func mult(x, y int) int {
+    return x * y
+}
+
+calc(sum) // 8
+calc(mult) // 12
+calc(
+    func(x, y int) int {
+		return x / y
+    }
+) // 3
+```
+
+#### Function closures: a function that returns a function that remembers the original context
+
+```go
+func calc() func(int) int {
+value := 0
+return func(x int) int {
+value += x
+return value
+}
+}
+
+calculator := calc()
+calculator(3) // 3
+calculator(45) // 48
+calculator(12) // 60
+```

@@ -1,0 +1,62 @@
+---
+title: Conditional Statements
+description: Go programming language conditional statements
+---
+
+#### If / Else
+
+```go
+i := 1
+
+if i > 0 {
+    // Condition is True! i is greater than zero
+} else {
+    // Condition is False! i is lower or equal to zero
+}
+```
+
+#### Else if
+
+```go
+i := 1
+
+if i > 0 {
+    // Condition is True! i is greater than zero
+} else if i > 0 && i < 2 {
+    // Condition is True! i greater than zero and lower than two
+} else if i > 1 && i < 4 {
+    // Condition is True! i greater than one and lower than four
+} else {
+    // None of the above conditions is True, so it falls here
+}
+```
+
+#### Switch
+
+```go
+text := 'hey'
+
+switch text {
+    case 'hey':
+        // 'Hello!'
+    case 'bye':
+        // 'Byee'
+    default:
+        // 'Ok'
+}
+```
+
+#### Switch without Condition
+
+```go
+value := 5
+
+switch {
+    case value < 2:
+        // 'Hello!'
+    case value >= 2 && value < 6:
+        // 'Byee'
+    default:
+        // 'Ok'
+}
+```

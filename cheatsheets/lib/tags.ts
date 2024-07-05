@@ -5,4 +5,5 @@ export const tags: TagProps[] = [
   { id: 2, name: "Bash", color: "#10233D" },
   { id: 3, name: "Git", color: "#FFB224" },
   { id: 4, name: "Docker", color: "#0F2E18" },
+  { id: 5, name: "Golang", color: "#0F2E18" },
 ];

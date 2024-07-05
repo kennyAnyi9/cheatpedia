@@ -1,0 +1,29 @@
+---
+title: Structs
+description: Go programming language structs
+---
+
+## Structs
+
+Structs are a way to arrange data in specific formats.
+
+```go
+// Declaring a struct
+type Person struct {
+    Name string
+    Age int
+}
+
+// Initializing
+person := Person{"John", 34}
+person.Name // "John"
+person.Age // 34
+
+person2 := Person{Age: 20}
+person2.Name // ""
+person2.Age // 20
+
+person3 := Person{}
+person3.Name // ""
+person3.Age // 0
+```

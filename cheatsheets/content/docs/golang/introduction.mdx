@@ -1,0 +1,124 @@
+---
+title: Introduction
+description: Cheatsheets
+---
+
+import { Callout } from "fumadocs-ui/components/callout";
+import { RollButton } from "fumadocs-ui/components/roll-button";
+
+<RollButton />
+
+## Hello World
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello Gophers!")
+}
+```
+
+<Callout title="Execution">
+ 1. It declares the `main` package, which is required for executable programs in Go.
+ 2. It imports the `fmt` package, which provides formatting and printing functions.
+ 3. The `main()` function is the entry point of the program.
+ 4. Inside `main()`, it uses `fmt.Println()` to print "Hello Gophers!" to the console.
+
+</Callout>
+
+## Go CLI Commands
+
+#### Compile and run code
+
+    ```bash
+    go run[<filename.go]
+    ```
+
+#### Compile
+
+    ```bash
+    go build [filename.go]
+    ```
+
+#### Running compiled file
+
+```bash
+./filename
+```
+
+#### Test packages
+
+```bash
+go test [folder]
+```
+
+#### Install packages/modules
+
+```bash
+go install [package]
+```
+
+#### List installed packages/modules
+
+```bash
+go list
+```
+
+#### Update packages/modules
+
+```bash
+go fix
+```
+
+#### Format package sources
+
+```bash
+go fmt
+```
+
+#### See package documentation
+
+```bash
+go doc [package]
+```
+
+#### Add dependencies and install
+
+```bash
+go get [module]
+```
+
+#### See Go environment variables
+
+```bash
+go env
+```
+
+#### See version
+
+```bash
+go version
+```
+
+### Go Modules
+
+<Callout title="">
+  Go projects are called `modules`. Each module has multiple `packages` Each
+  package should has a scoped functionality. Packages talk to each other to
+  compose the code. A module needs at least one package, the `main`. The package
+  main needs a entry function called `main`.
+</Callout>
+
+#### Create Module
+
+```bash
+$ go mod init [name]
+```
+
+<Callout title="Tip">
+  By convention, modules names has the follow structure:
+  `domain.com/user/module/package`.
+  <br /> Example: `github.com/spf13/cobra`
+</Callout>

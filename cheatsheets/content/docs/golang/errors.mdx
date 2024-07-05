@@ -1,0 +1,26 @@
+---
+title: Errors
+description: Go programming language errors
+---
+
+Go doesn't support `throw`, `try`, `catch` and other common error handling structures. Here, we use `error` package to build possible errors as a returning parameter in functions
+
+```go
+import "errors"
+
+// Function that contain a logic that can cause a possible exception flow
+func firstLetter(text string) (string, error) {
+    if len(text) < 1 {
+        return nil, errors.New("Parameter text is empty")
+    }
+    return string(text[0]), nil
+}
+
+a, errorA := firstLetter("Wow")
+a // "W"
+errorA // nil
+
+b, errorB := firstLetter("")
+b // nil
+errorB // Error("Parameter text is empty")
+```

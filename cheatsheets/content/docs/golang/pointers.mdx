@@ -1,0 +1,40 @@
+---
+title: Pointers
+description: Go programming language pointers
+---
+
+## Pointers
+
+Pointers are a direct reference to a memory address that some variable or value is being stored.
+
+```go
+// Pointers has *T type
+var value int
+var pointer *int
+
+// Point to a variable memory address with &
+value = 3
+pointer = &value
+
+pointer // 3
+pointer = 20
+pointer // 20
+pointer += 5
+pointer // 25
+
+// Pointers to structs can access the attributes
+type Struct struct {
+    X int
+}
+
+s := Struct{3}
+pointer := &s
+
+s.X // 3
+```
+
+Obs: Unlike C, Go doesn't have pointer arithmetics.
+
+```
+
+```

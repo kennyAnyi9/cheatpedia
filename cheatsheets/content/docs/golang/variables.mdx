@@ -1,0 +1,40 @@
+---
+title: Variables
+description: Go programming language variables
+---
+
+```go
+// Declaration
+var value int
+
+// Initialization
+value = 10
+
+// Declaration + Initialization + Type inference
+var isActive = true
+
+// Short declaration (only inside functions)
+text := "Hello"
+
+// Multi declaration
+var i, j, k = 1, 2, 3
+
+// Variable not initialized = Zero values
+// Numeric: 0
+// Boolean: false
+// String: ""
+// Special value: nil (same as null)
+
+var number int // 0
+var text string // ""
+var boolean bool // false
+
+// Type conversions
+// T(v) converts v to type T
+
+i := 1.234 // float
+int(i) // 1
+
+// Constants
+const pi = 3.1415
+```
