@@ -4,6 +4,7 @@ description: "docker cheatsheet"
 ---
 
 import { RollButton } from "fumadocs-ui/components/roll-button";
+import { Callout } from "fumadocs-ui/components/callout";
 
 <RollButton />
 
@@ -13,7 +14,7 @@ import { RollButton } from "fumadocs-ui/components/roll-button";
 docker-machine create --driver virtualbox myvm1
 ```
 
-**Note:** Replace `myvm1` with your desired VM name.
+<Callout>Replace `myvm1` with your desired VM name.</Callout>
 
 #### Create a new virtual machine using Hyper-V on Windows 10 (specify virtual switch)
 
@@ -21,7 +22,10 @@ docker-machine create --driver virtualbox myvm1
 docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm1
 ```
 
-**Note:** Replace `myswitch` with the actual name of your Hyper-V virtual switch and `myvm1` with your desired VM name.
+<Callout>
+  Replace `myswitch` with the actual name of your Hyper-V virtual switch and
+  `myvm1` with your desired VM name.
+</Callout>
 
 #### View information about a VM
 
@@ -29,7 +33,7 @@ docker-machine create -d hyperv --hyperv-virtual-switch "myswitch" myvm1
 docker-machine env myvm1
 ```
 
-**Note:** Replace `myvm1` with the name of your existing VM.
+<Callout>Replace `myvm1` with the name of your existing VM.</Callout>
 
 #### List nodes in a swarm (requires SSH access to the VM)
 
@@ -37,7 +41,9 @@ docker-machine env myvm1
 docker-machine ssh myvm1 "docker node ls"
 ```
 
-**Note:** Replace `myvm1` with the name of your VM running the swarm master.
+<Callout>
+  Replace `myvm1` with the name of your VM running the swarm master.
+</Callout>
 
 #### Inspect a specific node in a swarm (requires SSH access to the VM)
 
@@ -45,7 +51,7 @@ docker-machine ssh myvm1 "docker node ls"
 docker-machine ssh myvm1 "docker node inspect <node ID>"
 ```
 
-**Note:** Replace `<node ID>` with the actual ID of the node you want to inspect. You can get this ID from the previous command's output.
+<Callout>Replace `<node ID>` with the actual ID of the node you want to inspect. You can get this ID from the previous command's output.</Callout>
 
 #### View worker join token for a swarm (requires SSH access to the VM)
 
@@ -53,7 +59,10 @@ docker-machine ssh myvm1 "docker node inspect <node ID>"
 docker-machine ssh myvm1 "docker swarm join-token -q worker"
 ```
 
-**Note:** Replace `myvm1` with the name of your VM running a swarm worker.
+<Callout>
+  {" "}
+  Replace `myvm1` with the name of your VM running a swarm worker.
+</Callout>
 
 #### Open an SSH session to a VM
 
@@ -61,7 +70,9 @@ docker-machine ssh myvm1 "docker swarm join-token -q worker"
 docker-machine ssh myvm1
 ```
 
-**Note:** Replace `myvm1` with the name of your VM. Type "exit" to end the SSH session.
+<Callout>
+  Replace `myvm1` with the name of your VM. Type "exit" to end the SSH session.
+</Callout>
 
 #### Make a worker leave the swarm (requires SSH access to the VM)
 
@@ -69,7 +80,10 @@ docker-machine ssh myvm1
 docker-machine ssh myvm2 "docker swarm leave"
 ```
 
-**Note:** Replace `myvm2` with the name of the worker VM you want to remove from the swarm.
+<Callout>
+  Replace `myvm2` with the name of the worker VM you want to remove from the
+  swarm.
+</Callout>
 
 #### Force a swarm master to leave and shut down the swarm (requires SSH access to the VM)
 
@@ -77,7 +91,9 @@ docker-machine ssh myvm2 "docker swarm leave"
 docker-machine ssh myvm1 "docker swarm leave -f"
 ```
 
-**Note:** Replace `myvm1` with the name of your swarm master VM. Use this command with caution as it will disrupt the entire swarm.
+<Callout type="warn">
+  Use this command with caution as it will disrupt the entire swarm.
+</Callout>
 
 #### Start a stopped VM
 
@@ -85,7 +101,7 @@ docker-machine ssh myvm1 "docker swarm leave -f"
 docker-machine start myvm1
 ```
 
-**Note:** Replace `myvm1` with the name of your stopped VM.
+<Callout>Replace `myvm1` with the name of your stopped VM.</Callout>
 
 #### Stop all running VMs
 
@@ -93,7 +109,9 @@ docker-machine start myvm1
 docker-machine stop $(docker-machine ls -q)
 ```
 
-**Warning:** This command will stop all running VMs. Use with caution!
+<Callout type="warn">
+  This command will stop all running VMs. Use with caution!
+</Callout>
 
 #### Delete all VMs and their disk images
 
@@ -101,7 +119,10 @@ docker-machine stop $(docker-machine ls -q)
 docker-machine rm $(docker-machine ls -q)
 ```
 
-**Warning:** This command will permanently delete all VMs and their associated disk images. Use with extreme caution!
+<Callout type="warn">
+  This command will permanently delete all VMs and their associated disk images.
+  Use with extreme caution!
+</Callout>
 
 #### Copy a file to a VM (requires SSH access to the VM)
 
